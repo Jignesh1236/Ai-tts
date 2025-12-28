@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fun Reader</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="title">
+          <span>🎧</span> Fun Reader
+        </h1>
+        <div class="badge">BETA</div>
+      </div>
+
+      <div class="tabs">
+        <button id="tabReader" class="tab active">Reader</button>
+        <button id="tabChat" class="tab">Chat</button>
+      </div>
+
+      <div id="readerTab" class="tab-content active">
+      <div class="controls">
+        <button id="readBtn" class="btn primary full-width">
+          <span>▶️</span> Read Page
+        </button>
+        <button id="pickBtn" class="btn accent full-width">
+          <span>👆</span> Pick Text
+        </button>
+        <button id="explainBtn" class="btn accent full-width">
+          <span>🧠</span> Explain Selected
+        </button>
+        <button id="pauseBtn" class="btn">
+          <span>⏸️</span> Pause
+        </button>
+        <button id="resumeBtn" class="btn">
+          <span>▶️</span> Resume
+        </button>
+        <button id="skipBtn" class="btn">
+          <span>⏭️</span> Skip
+        </button>
+        <button id="stopBtn" class="btn danger">
+          <span>⏹️</span> Stop
+        </button>
+      </div>
+
+      <div class="options">
+        <div class="section-title">Voice & Settings</div>
+        <select id="voiceSelect">
+          <option value="">Default Voice</option>
+        </select>
+        <button id="testVoiceBtn" class="btn">
+          <span>🔊</span> Test Voice
+        </button>
+
+        <label>
+          <input type="checkbox" id="slowMode" /> 
+          <span>🐢 Slow Mode</span>
+        </label>
+        <label>
+          <input type="checkbox" id="explainConcepts" /> 
+          <span>🧠 Explain Concepts</span>
+        </label>
+        <label>
+          <input type="checkbox" id="friendlyMode" checked /> 
+          <span>😏 Friend Mode</span>
+        </label>
+      </div>
+
+      <div class="status-panel">
+        <div class="progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div id="status" class="status-text">Ready to read</div>
+      </div>
+
+      <div class="chunks-panel">
+        <div class="section-title">Reading Queue</div>
+        <div id="chunksList" class="chunks-list">
+          <div class="empty-state">No text loaded yet.</div>
+        </div>
+      </div>
+      </div>
+      
+      <div id="chatTab" class="tab-content">
+        <div class="chat-panel">
+        <div class="section-title">Chat Mode</div>
+        <div class="chat-controls">
+          <label style="display:flex;align-items:center;gap:8px;">
+            <span>Detail</span>
+            <input id="chatDetail" type="range" min="1" max="5" value="3" />
+            <span id="chatDetailValue">3</span>
+          </label>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+          <div class="chat-bar simple">
+            <button id="chatPickBtn" class="pick-btn" title="Pick element">👆</button>
+            <textarea id="chatInput" rows="2" placeholder="Type your message..."></textarea>
+            <button id="chatSendBtn" class="send-btn" title="Send">▲</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
